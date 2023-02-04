@@ -7,7 +7,7 @@ const token:any = process.env.TELEGRAM_BOT_TOKEN;
 
 const Tbot:any = new TelegramBot(token, {polling: true});
 
-Tbot.onText(/\/start/, (msg:any):void => {
+Tbot.onText(/\/start/, (msg:any):void => { // START COMMAND CONTROLLER...
     const userData = msg.from
     const current = new Date()
     console.log({...userData, log: `Start Bot in: ${current}`})
@@ -21,9 +21,9 @@ Tbot.onText(/\/start/, (msg:any):void => {
     })
 });
 
-Tbot.on('message', (msg:any):void => {
+Tbot.on('message', (msg:any):void => { //ANY MESSAGES CONTROLLER
 
-    if(msg.text == '🔗 به یه ناشناس وصلم کن!') {
+    if(msg.text == '🔗 به یه ناشناس وصلم کن!') {  // 🔗 به یه ناشناس وصلم کن! CONTROLLER...
         const userData = msg.from
         const current = new Date()
         console.log({...userData, log: `Send ${msg.text} in: ${current}`})
@@ -36,7 +36,7 @@ Tbot.on('message', (msg:any):void => {
         })
     }
 
-    if(msg.text == '👨🏻 پسرم' || msg.text == '👩🏻 دخترم') {
+    if(msg.text == '👨🏻 پسرم' || msg.text == '👩🏻 دخترم') { //PARENT: 🔗 به یه ناشناس وصلم کن!
         const userData = msg.from
         const current = new Date()
         console.log({...userData, log: `Send ${msg.text} in: ${current}`})
@@ -47,7 +47,7 @@ Tbot.on('message', (msg:any):void => {
         })
     }
 
-    if ((msg.text == 'پسر باشه 👨🏻' || msg.text == 'دختر باشه 👩🏻') || msg.text == 'مهم نیست') {
+    if ((msg.text == 'پسر باشه 👨🏻' || msg.text == 'دختر باشه 👩🏻') || msg.text == 'مهم نیست') { //PARENT: 🔗 به یه ناشناس وصلم کن
         const userData = msg.from
         const current = new Date()
         console.log({...userData, log: `Send ${msg.text} in: ${current}`})
@@ -59,7 +59,7 @@ Tbot.on('message', (msg:any):void => {
         })
     }
     
-    if(msg.text == '💌 به مخاطب خاصم وصلم کن!') {
+    if(msg.text == '💌 به مخاطب خاصم وصلم کن!') { // 💌 به مخاطب خاصم وصلم کن! CONTROLLER...
         const userData = msg.from
         const current = new Date()
         console.log({...userData, log: `Send ${msg.text} in: ${current}`})
@@ -70,7 +70,7 @@ Tbot.on('message', (msg:any):void => {
         راه دوم 👈 : الان یه پیام متنی از اون شخص به این ربات فوروارد کن تا ببینم عضو هست یا نه!`)
     }
 
-    if (msg.text == 'انصراف') {
+    if (msg.text == 'انصراف') { //CANCEL CONTROLLER...
         const userData = msg.from
         const current = new Date()
         console.log({...userData, log: `Start Bot in: ${current}`})
